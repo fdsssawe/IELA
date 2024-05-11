@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import Loader from '../components/Loader';
 import preview from "../media/preview.svg"
 import { useSelector } from 'react-redux';
 import api from "../http/index.js"
@@ -28,7 +27,6 @@ const Assessment = () => {
     }
     }, [user]);
     
-    const [generatingImg , setGeneratingImg] = useState(false)
     const [loading , setLoading] = useState(false)
 
 
@@ -76,12 +74,6 @@ const Assessment = () => {
                             alt="preview"
                             className="lg:w-9/12 lg:h-9/12 h-[250px] w-[250px] object-contain opacity-70"
                         />
-                        )}
-
-                        {generatingImg && (
-                        <div className="absolute inset-0 z-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] rounded-lg">
-                            <Loader/>
-                        </div>
                         )}
                     </div>
                     <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 justify-center items-center flex">

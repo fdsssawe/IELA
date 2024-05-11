@@ -3,7 +3,6 @@
 import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import animationData from '../../media/analyze.json';
-import { useEffect, useRef } from 'react';
 import cl from "./home.module.css"
 
 
