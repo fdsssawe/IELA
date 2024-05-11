@@ -30,8 +30,8 @@ const Header = () => {
             <header class="text-black body-font border-solid border-b-2">
             <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                 <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-            <a className="mr-5 hover:text-black cursor-pointer" onClick={()=>navigate("/assessment ")}>Assessment </a>
-            <a className="mr-5 hover:text-black cursor-pointer" onClick={()=>navigate("/about")}>About us</a>
+            <a className="mr-5 hover:text-black cursor-pointer" onClick={()=>navigate("/assessment")}>Assessment </a>
+            {/* <a className="mr-5 hover:text-black cursor-pointer" onClick={()=>navigate("/about")}>About us</a> */}
             </nav>
             <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-black lg:items-center lg:justify-center mb-4 md:mb-0 cursor-pointer" href='/'>
             <img src={logo} alt="" />

@@ -26,7 +26,7 @@ const Home = () => {
                 </p>
                 <div className="flex justify-center w-full lg:w-fit">
                 <button onClick={()=>navigate("/assessment")}
-                className="text-black lg:text-[1.438rem] leading-relaxed bg-primary border-0 py-2 px-4  focus:outline-none hover:bg-primary-dark rounded text-[1.05rem] lg:w-[11.4rem] lg:h-[3.063rem] flex items-center">
+                className="text-black lg:text-[1.438rem] leading-relaxed bg-primary border-0 py-2 px-4  focus:outline-none hover:bg-primary-dark rounded text-[1.05rem] lg:w-[11.6rem] lg:h-[3.063rem] flex items-center">
                 Start assessing
                 </button>
                 </div>
