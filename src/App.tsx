@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect} from 'react'
 import Header from './components/Header.tsx'
 import { useDispatch } from 'react-redux'
 import { checkAuth } from './store/index.ts'
