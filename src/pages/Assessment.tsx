@@ -10,18 +10,23 @@ const Assessment = () => {
 
     const [form, setForm] = useState({
         base64: '',
-      });
+    });
     
-      const user = useSelector((state : any) => state.prodAuth.user);
+    const user = useSelector((state : any) => state.prodAuth.user);
+
     
-      useEffect(() => {
-        if (user) {
-          setForm(prevState => ({
-            ...prevState,
-            author: user.id,
-          }));
-        }
-      }, [user]);
+    useEffect(() => {
+    setForm(prevState => ({
+        ...prevState,
+        author: "663e3e89ac365c5e327c89f9"
+        }));
+    if (user.id) {
+        setForm(prevState => ({
+        ...prevState,
+        author: user.id,
+        }));
+    }
+    }, [user]);
     
     const [generatingImg , setGeneratingImg] = useState(false)
     const [loading , setLoading] = useState(false)
@@ -79,7 +84,7 @@ const Assessment = () => {
                         </div>
                         )}
                     </div>
-                    <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 border-2 justify-center items-center flex">
+                    <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 justify-center items-center flex">
                         <h1 className="text-black text-3xl title-font font-medium mb-1">Upload your image</h1>
                         <div className="flex mb-4">
                         </div>

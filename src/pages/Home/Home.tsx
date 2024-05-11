@@ -3,12 +3,16 @@
 import { useNavigate } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import animationData from '../../media/analyze.json';
+import { useEffect, useRef } from 'react';
+import cl from "./home.module.css"
 
 
 
 
 const Home = () => {
+
     const navigate = useNavigate()
+    
 
     return(
         <section className="text-black bg-white dark:[color-scheme:dark] min-h-screen pb-[100px] max-w-full overflow-hidden pl-20">
@@ -31,7 +35,7 @@ const Home = () => {
                 </div>   
                 <div className="flex lg:justify-end justify-center w-full md:mt-20 mt-0">
                         {/* <img className="md:max-h-[70vh] md:max-w-[50.08vw] max-h-[273px] max-w-[350px]" alt="hero" src={homepicture2}></img> */}
-                        <Lottie className="md:max-h-[80vh] md:max-w-[50.08vw] max-h-[273px] max-w-[350px]" animationData={animationData} />
+                        <Lottie className={`md:max-h-[80vh] md:max-w-[50.08vw] max-h-[273px] max-w-[350px] ${cl.lottie_container}`} animationData={animationData}/>
                 </div>
             </div>
             {/* white section */}

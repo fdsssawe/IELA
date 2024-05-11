@@ -46,3 +46,6 @@
     transform: translateX(0);
 }
 
+.lottie_container > svg {
+    transform: unset !important;
+  }
