@@ -32,7 +32,7 @@ export const login = createAsyncThunk<User, { email: string; password: string }>
     localStorage.setItem('token', response.data.accessToken);
     setAuth(true);
     setUser(response.data.user);
-    window.location.href = import.meta.env.VITE_CLIENT_URL;
+    window.location.href = "https://iela.vercel.app/";
     return response.data.user;
   } catch (e : any) {
     throw new Error(e.response?.data?.message);
@@ -46,7 +46,7 @@ export const registration = createAsyncThunk<User, { email: string; password: st
     localStorage.setItem('token', response.data.accessToken);
     setAuth(true);
     setUser(response.data.user);
-    window.location.href = import.meta.env.VITE_CLIENT_URL;
+    window.location.href = "https://iela.vercel.app/";
     return response.data.user;
   } catch (e : any) {
     throw new Error(e.response?.data?.message);
@@ -61,13 +61,13 @@ export const googleAuthHandle = createAsyncThunk<User, { email: string; password
       localStorage.setItem('token', response.response.data.accessToken);
       setAuth(true);
       setUser(response.response.data.user);
-      window.location.href = import.meta.env.VITE_CLIENT_URL;
+      window.location.href = "https://iela.vercel.app/";
       return response.response.data.user;
     } else {
       localStorage.setItem('token', response.response.data.accessToken);
       setAuth(true);
       setUser(response.response.data.user);
-      window.location.href = import.meta.env.VITE_CLIENT_URL;
+      window.location.href = "https://iela.vercel.app/";
       return response.response.data.user;
     }
   } catch (e : any) {
