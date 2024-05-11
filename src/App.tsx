@@ -18,7 +18,7 @@ function App() {
   },[])
 
   return (
-    <div className="dark:[color-scheme:dark] min-h-screen relative">
+    <div className="min-h-screen relative">
       <BrowserRouter>
       <Header/>
       <AppRouter/>
