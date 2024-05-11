@@ -1,15 +1,11 @@
-import FileSaver from "file-saver";
-import download from "../media/download.svg";
 import { useNavigate } from 'react-router-dom';
 
 
-const Card = ({ _id, original, result, author, createdAt } : { _id:string , original: string, result : string, author : string, createdAt: string}) => {
+const Card = ({ _id, original, createdAt } : { _id:string , original: string, createdAt: string}) => {
     
-    async function downloadImage(_id : string, result : string){
-        FileSaver.saveAs(result , `download-${_id}.jpg`)
-    }
 
     const navigate = useNavigate()
+    
     return(
         <div className="rounded-xl group relative h-fit mb-3" >
             <img

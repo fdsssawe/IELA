@@ -5,7 +5,8 @@ import api from "../http";
 //parent class
 class Command {
     execute(...args: any) {
-        throw new Error('This method must be overwritten!');
+        
+        throw new Error('This method must be overwritten! Provided data : ' + args.join(', '));
     }
 }
 
