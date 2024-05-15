@@ -1,9 +1,12 @@
 // import homepicture2 from "../../media/homepicture2.svg"
 // import homepicture1 from "../../media/homepicture1.svg"
 import { useNavigate } from 'react-router-dom';
-import Lottie from 'lottie-react';
-import animationData from '../../media/analyze.json';
-import cl from "./home.module.css"
+// import Lottie from 'lottie-react';
+// import animationData from '../../media/analyze.json';
+// import cl from "./home.module.css"
+import { ImgComparisonSlider } from '@img-comparison-slider/react';
+import before from '../../media/before.png'
+import after from '../../media/after.png'
 
 
 
@@ -25,17 +28,21 @@ const Home = () => {
                 Use our free service to assess your image exposure and get the best results.
                 </p>
                 <div className="flex justify-center w-full lg:w-fit">
-                <button onClick={()=>navigate("/assessment")}
-                className="text-black lg:text-[1.438rem] leading-relaxed bg-primary border-0 py-2 px-4  focus:outline-none hover:bg-primary-dark rounded text-[1.05rem] lg:w-[11.6rem] lg:h-[3.063rem] flex items-center">
-                Start assessing
+                <button onClick={()=>navigate("/signup")}
+                className="text-black lg:text-[1.438rem] leading-relaxed bg-primary border-0 py-2 px-4  focus:outline-none hover:bg-primary-dark rounded text-[1.05rem] lg:w-[8.86rem] lg:h-[3.063rem] flex items-center">
+                Try for free
                 </button>
                 </div>
                 </div>
                 </div>   
-                <div className="flex lg:justify-end justify-center w-full md:mt-20 mt-0">
-                        {/* <img className="md:max-h-[70vh] md:max-w-[50.08vw] max-h-[273px] max-w-[350px]" alt="hero" src={homepicture2}></img> */}
+                {/* <div className="flex lg:justify-end justify-center w-full md:mt-20 mt-0">
+                        <img className="md:max-h-[70vh] md:max-w-[50.08vw] max-h-[273px] max-w-[350px]" alt="hero" src={homepicture2}></img>
                         <Lottie className={`md:max-h-[80vh] md:max-w-[50.08vw] max-h-[273px] max-w-[350px] ${cl.lottie_container}`} animationData={animationData}/>
-                </div>
+                </div> */}
+                    <ImgComparisonSlider value={50} className="flex h-[680px] lg:justify-end justify-center w-fill md:mt-20 mt-0 items-center border-primary border-4 rounded-[2rem]">
+                    <img slot="first" src={before} className='w-[600px]'/>
+                    <img slot="second" src={after} className='w-[600px]'/>
+                    </ImgComparisonSlider>
             </div>
             {/* white section */}
             {/* <div className='flex justify-center w-full bg-white lg:h-[41.688rem] px-5'>
