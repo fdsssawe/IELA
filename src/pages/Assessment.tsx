@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import preview from "../media/preview.svg"
 import { useSelector } from 'react-redux';
 import api from "../http/index.js"
+import Loader from '../components/Loader.js';
 
 
 const Assessment = () => {
@@ -61,19 +62,24 @@ const Assessment = () => {
             <section className="text-gray-400 body-font overflow-hidden pb-[200px] lg:pb-0">
                 <div className="container pt-24 mx-auto min-h-screen">
                     <div className="lg:w-4/5 mx-auto flex flex-wrap md:justify-start justify-center">
-                    <div className="relative  border-2 border-primary text-sm rounded-lg focus:ring-primary-dark focus:border-primary-dark lg:w-[500px] p-0.5 lg:h-[500px] h-[320px] w-[320px] flex justify-center items-center">
+                    <div className="relative  border-4 border-primary text-sm rounded-lg focus:ring-primary-dark focus:border-primary-dark lg:w-[500px] lg:h-[500px] h-[320px] w-[320px] flex justify-center items-center">
                         { form.base64 ? (
                         <img
                             src={form.base64}
                             alt="preview"
-                            className="lg:w-full lg:h-full h-[250px] w-[250px] object-contain"
+                            className="lg:w-full lg:h-full h-[250px] w-[250px] object-contain rounded-[4px]"
                         />
                         ) : (
                         <img
                             src={preview}   
                             alt="preview"
-                            className="lg:w-9/12 lg:h-9/12 h-[250px] w-[250px] object-contain opacity-70"
+                            className="lg:w-9/12 lg:h-9/12 h-[250px] w-[250px] object-contain opacity-70 rounded-[4px]"
                         />
+                        )}
+                        {loading && (
+                        <div className="absolute inset-0 z-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] rounded-[4px]">
+                            <Loader/>
+                        </div>
                         )}
                     </div>
                     <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 justify-center items-center flex">
