@@ -1,8 +1,5 @@
 import api from "../http";
 
-// Command pattern used here to separate the request logic from the service in oreder to make it more testable and flexible
-
-//parent class
 class Command {
     execute(...args: any) {
         
@@ -10,7 +7,6 @@ class Command {
     }
 }
 
-//One of the many child classes representing a specific command (request)
 class LoginCommand extends Command {
     execute(email : String, password : String) {
         return api.post('/login', {email, password});
@@ -50,7 +46,6 @@ class GoogleAuthHandleCommand extends Command {
     }
 }
 
-//Service class that will be used to execute the commands
 
 interface AuthServiceInterface {
     commands: object

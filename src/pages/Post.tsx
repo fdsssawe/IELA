@@ -45,18 +45,6 @@ const Post = () => {
     }
 
     return (
-        // <section className=" dark:[color-scheme:dark] min-h-screen pb-[150px]">
-        //     <div className='flex w-full justify-center lg:pt-24 md:pt-12'>
-        //         <div className='lg:h-[32rem] lg:w-[62.438rem] lg:rounded-[2.5rem] mb-4 lg:grid-rows-1 lg:grid-cols-2 flex flex-col lg:flex-row border-2 border-primary justify-between'>
-        //             {loading ? <div className='flex items-center justify-center'><Loader /></div> :
-        //                 <div className='flex justify-center lg:justify-start mt-12 md:mt-0 mb-2 md:mb-0'><img src={postInfo.original} className='lg:rounded-l-[2.5rem] md:rounded-l-[1.5rem] lg:h-[31.75rem] md:h-[35rem]'></img></div>}
-        //             {loading ? <div className='flex items-center justify-center'><Loader /></div> :
-        //                 <div className='flex justify-center lg:justify-start mt-12 md:mt-0 mb-2 md:mb-0'><img src={postInfo.result} className='lg:rounded-r-[2.5rem] md:rounded-r-[1.5rem] lg:h-[31.75rem] md:h-[35rem] border-l-primary border-l-2'></img></div>}
-
-        //         </div>
-        //     </div>
-        //     <p className='flex justify-center text-white text-xl title-font font-medium mb-4 mt-6'>More from the author</p>
-        // </section>
         <section className="text-gray-600 body-font">
   <div className="container px-5 py-24 mx-auto">
     <div className="flex flex-wrap -mx-4 -mb-10 text-center">
