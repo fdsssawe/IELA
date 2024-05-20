@@ -11,9 +11,17 @@ const Assessment = () => {
     const [form, setForm] = useState({
         base64: '',
     });
-    
+    const [analisedData, setAnalisedData] = useState({
+        averageBrightness: '',
+        clippingPercentage: 0,
+        dynamicRange: 0,
+        averageNoise: 0,
+        isWhiteBalanced: false,
+        colorSpace: "",
+        brightness: ""
+    });
     const user = useSelector((state : any) => state.prodAuth.user);
-
+    
     
     useEffect(() => {
     setForm(prevState => ({
@@ -42,6 +50,7 @@ const Assessment = () => {
                     }
                     })
                 console.log(response.data)
+                setAnalisedData(response.data)
                 setForm({base64 : response.data.result})
             }catch(e){
                 console.log(e)
@@ -82,7 +91,7 @@ const Assessment = () => {
                         </div>
                         )}
                     </div>
-                    <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0 justify-center items-center flex">
+                    <div className="lg:w-1/2 w-full lg:pl-10 lg:pt-6 mt-6 lg:mt-0 justify-center items-center flex flex-col">
                         <h1 className="text-black text-3xl title-font font-medium mb-1">Upload your image</h1>
                         <div className="flex mb-4">
                         </div>
@@ -117,6 +126,34 @@ const Assessment = () => {
                         </button>
                         </div>
                         </form>
+                        <div className="container h-full flex pt-10 pb-1">
+                            <div className='border-4 border-primary rounded-lg w-full flex justify-center'>
+                        { form.base64 ? (
+                            <ul className='text-black gap-4 text-lg font-[500] text-center'>
+                                <h1 className="text-black text-3xl title-font font-medium my-4">Image Analysis</h1>
+                                <li>Average Brightness: {analisedData.averageBrightness}</li>
+                                <li>Clipping Percentage: {analisedData.clippingPercentage}</li>
+                                <li>Dynamic Range: {analisedData.dynamicRange}</li>
+                                <li>Average Noise: {analisedData.averageNoise}</li>
+                                <li>Is White Balanced: {analisedData.isWhiteBalanced ? 'Yes' : 'No'}</li>
+                                <li>Color Space: {analisedData.colorSpace}</li>
+                                <li>Brightness: {analisedData.brightness}</li>
+                            </ul>
+
+                        ) : (
+                        <img
+                            src={preview}   
+                            alt="preview"
+                            className="lg:w-9/12 lg:h-9/12 h-[250px] w-[250px] object-contain opacity-70 rounded-[4px]"
+                        />
+                        )}
+                        {loading && (
+                        <div className="absolute inset-0 z-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] rounded-[4px]">
+                            <Loader/>
+                        </div>
+                        )}
+                        </div>
+                        </div>
                     </div>
                     </div>
                 </div>
