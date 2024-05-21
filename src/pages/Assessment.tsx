@@ -127,8 +127,8 @@ const Assessment = () => {
                         </div>
                         </form>
                         <div className="container h-full flex pt-10 pb-1">
-                            <div className='border-4 border-primary rounded-lg w-full flex justify-center'>
-                        { form.base64 ? (
+                            <div className='border-4 border-primary rounded-lg w-full flex justify-center relative'>
+                        { analisedData.averageBrightness ? (
                             <ul className='text-black gap-4 text-lg font-[500] text-center'>
                                 <h1 className="text-black text-3xl title-font font-medium my-4">Image Analysis</h1>
                                 <li>Average Brightness: {analisedData.averageBrightness}</li>
@@ -141,11 +141,9 @@ const Assessment = () => {
                             </ul>
 
                         ) : (
-                        <img
-                            src={preview}   
-                            alt="preview"
-                            className="lg:w-9/12 lg:h-9/12 h-[250px] w-[250px] object-contain opacity-70 rounded-[4px]"
-                        />
+                            <div className='flex h-full w-full items-center justify-center text-lg'>
+                                Waiting for image ...
+                            </div>
                         )}
                         {loading && (
                         <div className="absolute inset-0 z-0 flex justify-center items-center bg-[rgba(0,0,0,0.5)] rounded-[4px]">
